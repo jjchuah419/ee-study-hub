@@ -22,20 +22,6 @@ python3 -m http.server 8000
 
 接著在瀏覽器開啟 `http://localhost:8000`。
 
-## GitHub Pages 部署教學
-
-1. 登入 GitHub，建立一個公開 Repository，例如 `ee-study-hub`。
-2. 解壓縮 ZIP，將 **`EE-Study-Hub` 資料夾內**的 `index.html`、`styles.css`、`data.js`、`app.js`、`AGENTS.md`、`README.md`、`SUBMISSION.md` 上傳到 Repository **根目錄**（不要只上傳 ZIP）。
-3. 在 Repository 依序開啟 **Settings → Pages**。
-4. **Build and deployment** 選擇 **Deploy from a branch**；Branch 選 `main`，資料夾選 `/(root)`，再儲存。
-5. 等 GitHub Pages 顯示正式網址後開啟檢查，通常網址形如：`https://你的帳號.github.io/ee-study-hub/`（以實際畫面為準）。
-6. 將實際的 Repository URL 與網頁 URL 貼進 `SUBMISSION.md`，再依老師要求繳交。
-
-> 本套件只是專案原始檔，**尚未替你上傳到 GitHub 或發佈公開網址**。公開發布需由你的 GitHub 帳號操作。
-
-## 後續交給 AI 擴充
-
-先提供 `AGENTS.md`，再交辦：「請依照 AGENTS.md 的規則，在 `data.js` 增加一篇 RC 低通濾波器的單元，含完整範例與練習，完成後檢查搜尋、課程頁與手機版。」
 
 ## 檔案用途
 
