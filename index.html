@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="電機學習筆記庫：電子學、電路學、線性代數及數位邏輯的個人學習網站。" />
+  <meta name="theme-color" content="#10233f" />
+  <title>EE Study Hub｜電機學習筆記庫</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容</a>
+  <header class="site-header">
+    <div class="nav-wrap container">
+      <a class="brand" href="#home" aria-label="電機學習筆記庫首頁"><span class="brand-mark">∿</span><span>EE <b>Study Hub</b><small>電機學習筆記庫</small></span></a>
+      <nav class="nav" aria-label="主要導覽">
+        <a href="#home" data-nav="home">首頁</a>
+        <a href="#courses" data-nav="courses">課程筆記</a>
+        <a href="#notebook" data-nav="notebook">我的筆記</a>
+        <a href="#about" data-nav="about">關於專案</a>
+      </nav>
+      <button class="theme-btn" id="themeToggle" type="button" title="切換深色／淺色模式" aria-label="切換深色／淺色模式">◐</button>
+    </div>
+  </header>
+  <main id="main">
+    <section id="home" class="view active" aria-labelledby="homeTitle">
+      <div class="hero">
+        <div class="container hero-inner">
+          <div><span class="eyebrow">LEARN · ORGANIZE · REPEAT</span>
+            <h1 id="homeTitle">把複雜的電機知識，<br><span>整理成看得懂的筆記。</span></h1>
+            <p class="hero-sub">從電路分析到數位邏輯，用清楚的公式、重點與練習題，建立自己的工程學習地圖。</p>
+            <div class="hero-actions"><a class="btn primary" href="#courses">探索課程 <span aria-hidden="true">→</span></a><a class="btn secondary" href="#notebook">寫下我的筆記</a></div>
+          </div>
+          <div class="hero-art" aria-hidden="true"><div class="signal">v(t) = Vₘ sin(ωt)</div><svg viewBox="0 0 440 250" preserveAspectRatio="xMidYMid meet"><defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="currentColor" stroke-opacity=".12"/></pattern></defs><rect width="440" height="250" rx="18" fill="url(#grid)"/><path d="M0 125 H440" stroke="currentColor" stroke-opacity=".25" stroke-dasharray="6 8"/><path d="M0 125 C35 125 35 38 70 38 S105 212 140 212 S175 38 210 38 S245 212 280 212 S315 38 350 38 S385 212 420 212" fill="none" stroke="#49dcc8" stroke-width="5" stroke-linecap="round"/></svg><div class="art-foot"><span>AC SIGNAL</span><span>01 / 04</span></div></div>
+        </div>
+      </div>
+      <div class="container sections">
+        <div class="section-head"><div><span class="kicker">KNOWLEDGE MAP</span><h2>從這裡開始學習</h2><p>選擇一個領域，快速進入該科目的核心觀念。</p></div><a href="#courses" class="text-link">查看全部課程 →</a></div>
+        <div class="course-grid" id="homeCourseGrid"></div>
+        <div class="feature-strip"><div><strong>04</strong><span>學習領域</span></div><div><strong id="lessonCount">00</strong><span>範例單元</span></div><div><strong>∞</strong><span>持續擴充</span></div><p>這個網站不只是一次性的網頁作品，更是一份可以交給 AI 延續開發的學習專案。</p></div>
+      </div>
+    </section>
+    <section id="courses" class="view" aria-labelledby="coursesTitle"><div class="page-band"><div class="container"><span class="kicker">COURSE LIBRARY</span><h1 id="coursesTitle">課程筆記</h1><p>搜尋科目、關鍵字或主題，點選卡片查看重點與例題。</p></div></div><div class="container sections"><div class="filters"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜尋：例如 KCL、MOSFET、矩陣..." aria-label="搜尋課程與筆記" /></label><div class="chips" id="courseFilters" aria-label="課程分類"></div></div><div id="lessonGrid" class="lesson-grid"></div><p id="emptyState" class="empty" hidden>沒有找到符合條件的筆記，請換一個關鍵字試試。</p></div></section>
+    <section id="lesson" class="view" aria-labelledby="lessonTitle"><div class="page-band"><div class="container"><a href="#courses" class="back">← 返回課程筆記</a><span class="kicker" id="lessonCategory"></span><h1 id="lessonTitle">課程單元</h1><p id="lessonIntro"></p></div></div><div class="container lesson-layout"><article class="lesson-content" id="lessonContent"></article><aside class="lesson-aside"><span class="aside-title">學習建議</span><p>先理解核心概念，再跟著範例計算，最後嘗試不看答案完成練習。</p><a class="btn primary full" href="#notebook">整理成我的筆記 →</a></aside></div></section>
+    <section id="notebook" class="view" aria-labelledby="notesTitle"><div class="page-band"><div class="container"><span class="kicker">PERSONAL NOTEBOOK</span><h1 id="notesTitle">我的筆記</h1><p>把讀書心得、公式與待複習問題記下來。內容保存在這台瀏覽器中。</p></div></div><div class="container notebook-layout"><form class="note-form" id="noteForm"><h2>新增學習筆記</h2><label for="noteTitle">筆記標題</label><input id="noteTitle" maxlength="80" required placeholder="例如：KCL 計算技巧" /><label for="noteCategory">課程類別</label><select id="noteCategory"><option>電路學</option><option>電子學</option><option>線性代數</option><option>數位邏輯</option><option>其他</option></select><label for="noteBody">筆記內容</label><textarea id="noteBody" rows="8" maxlength="6000" required placeholder="記下你的重點、例題或疑問..."></textarea><button type="submit" class="btn primary full">儲存筆記</button><p class="form-hint" role="status" id="noteStatus">筆記僅儲存在本機瀏覽器，不會同步至其他裝置。</p></form><div class="my-notes"><div class="section-head"><div><h2>已儲存的筆記</h2><p id="noteCounter">0 篇筆記</p></div><button type="button" class="text-link download-btn" id="exportNotes">匯出 JSON ↓</button></div><div id="savedNotes"></div></div></div></section>
+    <section id="about" class="view" aria-labelledby="aboutTitle"><div class="page-band"><div class="container"><span class="kicker">BUILD WITH RULES</span><h1 id="aboutTitle">關於這個專案</h1><p>讓知識持續累積，也讓 AI 能按照同一份規範繼續開發。</p></div></div><div class="container about-layout"><div><h2>為什麼建立 EE Study Hub？</h2><p>電機相關課程常包含公式、觀念與多步驟計算。這個網站把不同科目的重點整理成一致的單元格式，讓複習更有效率，也方便未來新增更多內容。</p><h2>AGENTS.md 的用途</h2><p>專案根目錄放有 <code>AGENTS.md</code>，記錄目標、設計風格、檔案結構、內容格式、安全規則與驗收方式。之後交給 AI 新增一篇筆記時，只需要先讀規則，就能延續相同的版面與品質。</p><h2>使用技術</h2><p>原生 HTML、CSS、JavaScript；不需要付費 API 或後端伺服器，可直接部署到 GitHub Pages。</p></div><div class="about-panel"><span class="kicker">PROJECT WORKFLOW</span><div class="step"><span>01</span><div><b>閱讀規則</b><small>先確認 AGENTS.md 的約定</small></div></div><div class="step"><span>02</span><div><b>建立內容</b><small>依照資料結構新增 lesson</small></div></div><div class="step"><span>03</span><div><b>確認成果</b><small>檢查搜尋、連結與響應式排版</small></div></div><div class="step"><span>04</span><div><b>發布網頁</b><small>透過 GitHub Pages 公開展示</small></div></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><span>∿ EE Study Hub <span class="muted">· 為學習而設計</span></span><span>Built with HTML · CSS · JavaScript</span></div></footer>
+</body></html>
